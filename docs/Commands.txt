@@ -1,9 +1,0 @@
-aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:/AWS/vmimport/trust-policy.json"
-
-aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:/AWS/vmimport/role-policy.json"
-
-aws s3 cp "C:\AWS\Windows 10.ova" s3://awsmigrationvmexportimport/
-
-aws ec2 import-image --description "Windows 10 OVA" --disk-containers "file://C:/AWS/vmimport/containers.json"
-
-aws ec2 describe-import-image-tasks --import-task-ids import-ami-0625944a815e834e0
